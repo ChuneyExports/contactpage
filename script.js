@@ -28,7 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
         email.addEventListener('click', (e) => {
             e.preventDefault();
             const emailAddress = email.textContent;
-            window.location.href = `mailto:${emailAddress}`;
+            const mailtoLink = document.createElement('a');
+            mailtoLink.href = `mailto:${emailAddress}`;
+            mailtoLink.click();
         });
     });
 });
+
