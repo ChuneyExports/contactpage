@@ -6,13 +6,27 @@ document.addEventListener('DOMContentLoaded', () => {
         phone.addEventListener('click', () => {
             const phoneNumber = phone.dataset.phone;
             navigator.clipboard.writeText(phoneNumber).then(() => {
-                alert('Phone number copied to clipboard!');
+                // Create and insert the "Copied" message
+                const copiedMessage = document.createElement('p');
+                copiedMessage.textContent = 'Phone number copied!';
+                copiedMessage.style.color = '#007bff';
+                copiedMessage.style.fontSize = '0.8em';
+                copiedMessage.style.marginTop = '0.2em';
+                
+                // Insert the message after the clicked phone number
+                phone.parentNode.insertBefore(copiedMessage, phone.nextSibling);
+
+                // Remove the message after 2 seconds
+                setTimeout(() => {
+                    copiedMessage.remove();
+                }, 2000);
             });
         });
     });
 
     emailAddresses.forEach(email => {
-        email.addEventListener('click', () => {
+        email.addEventListener('click', (e) => {
+            e.preventDefault();
             const emailAddress = email.textContent;
             window.location.href = `mailto:${emailAddress}`;
         });
