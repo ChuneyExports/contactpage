@@ -65,7 +65,80 @@ body {
 .fas {
     margin-right: 0.5rem;
 }
+/* ── Product Section ── */
+.product-section {
+    margin: 1.2rem 0;
+    padding: 1.2rem 1.4rem;
+    background: linear-gradient(135deg, #fdf6ec 0%, #fbeeda 100%);
+    border-left: 4px solid #c8922a;
+    border-radius: 8px;
+    text-align: left;
+}
 
+.product-section h3 {
+    font-family: "EB Garamond", serif;
+    font-size: 1.15rem;
+    color: #7a5010;
+    margin: 0 0 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.product-section p {
+    font-size: 0.88rem;
+    color: #555;
+    margin: 0;
+    line-height: 1.65;
+}
+
+/* ── Discount Banner ── */
+.discount-banner {
+    margin: 1.2rem 0;
+    padding: 0.9rem 1.2rem;
+    background: linear-gradient(135deg, #c8922a 0%, #e8b84b 100%);
+    border-radius: 8px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+}
+
+.discount-banner .badge {
+    font-size: 1.8rem;
+    font-weight: 800;
+    font-family: "EB Garamond", serif;
+    white-space: nowrap;
+}
+
+.discount-banner .badge-text {
+    font-size: 0.82rem;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.discount-banner .badge-text strong {
+    display: block;
+    font-size: 0.95rem;
+}
+.contact-info p:hover {
+    transform: translateY(-2px);
+    color: #c8922a; /* changed from #007bff */
+    cursor: pointer;
+}
+
+/* ── Mobile adjustment for banner ── */
+@media screen and (max-width: 480px) {
+    .discount-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .discount-banner .badge-text {
+        text-align: center;
+    }
+}
 /* Tablet devices (portrait) */
 @media screen and (max-width: 768px) {
     :root {
